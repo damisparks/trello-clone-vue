@@ -27,3 +27,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### TODO
+- [ ] Relate the done task to its commit.
+### DONE
+- [x] Build the board
+- [x] Add Open Task in a modal
+- [x] Add & Edit Task
+- [x] Add drag and dropping of the tasks.
