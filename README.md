@@ -1,4 +1,5 @@
 # Trello Clone
+The scope of the project to help learn how the drag and drop API works.
 
 ## Project setup
 ```
@@ -35,3 +36,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Add Open Task in a modal
 - [x] Add & Edit Task
 - [x] Add drag and dropping of the tasks.
+- [x] Add and dropping columns
