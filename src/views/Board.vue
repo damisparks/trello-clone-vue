@@ -9,7 +9,7 @@
         @drop="moveTaskOrColumn($event, column.tasks, $columnIndex)"
         @dragover.prevent
         @dragenter.prevent
-        @dragstart.self="pickUpColumn($event, $columnIndex)"
+        @dragstart.self="pickupColumn($event, $columnIndex)"
 
       >
         <div class="flex items-center mb-2 font-bold">
@@ -88,10 +88,10 @@ export default {
       e.dataTransfer.setData('type', 'task')
     },
 
-    pickUpColumn (e, taskIndex, fromColumnIndex) {
+    pickupColumn (e, fromColumnIndex) {
       e.dataTransfer.effectAllowed = 'move'
       e.dataTransfer.dropEffect = 'move'
-      e.dataTransfer.setData('from-task-index', taskIndex)
+      e.dataTransfer.setData('from-column-index', fromColumnIndex)
       e.dataTransfer.setData('type', 'column')
     },
 
@@ -119,7 +119,8 @@ export default {
     moveColumn (e, toColumnIndex) {
       const fromColumnIndex = e.dataTransfer.getData('from-column-index')
       this.$store.commit('MOVE_COLUMN', {
-        fromColumnIndex, toColumnIndex
+        fromColumnIndex,
+        toColumnIndex
       })
     }
   }
