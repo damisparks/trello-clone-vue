@@ -30,10 +30,14 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
-- [ ] Relate the done task to its commit.
+- [ ] Create a Mixin to encapsulate shared logic
+- [ ] Extract Drag & Drop
 ### DONE
 - [x] Build the board
 - [x] Add Open Task in a modal
 - [x] Add & Edit Task
 - [x] Add drag and dropping of the tasks.
 - [x] Add and dropping columns
+- [x] Extracting columns into components
+- [x] Extracting tasks into components
+- [x] Adding New Columns
