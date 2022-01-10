@@ -1,87 +1,45 @@
 <template>
-  <div>
-    <div
-        class="column"
-        draggable="true"
-        @drop="moveTaskOrColumn($event, column.tasks, columnIndex)"
-        @dragover.prevent
-        @dragenter.prevent
-        @dragstart.self="pickupColumn($event, columnIndex)"
+  <div
+      class="column"
+      draggable="true"
+      @drop="moveTaskOrColumn($event, column.tasks, columnIndex)"
+      @dragover.prevent
+      @dragenter.prevent
+      @dragstart.self="pickupColumn($event, columnIndex)"
 
-      >
-        <div class="flex items-center mb-2 font-bold">
-          {{ column.name }}
-        </div>
-        <div class="list-reset">
-          <column-task
-            v-for="(task, $taskIndex) of column.tasks"
-            :key="$taskIndex"
-            :task="task"
-            :taskIndex="$taskIndex"
-            :column="column"
-            :columnIndex="columnIndex"
-            :board="board"
-          />
-          <!-- add new task starts -->
-          <input
-            type="text"
-            class="block p-2 w-full bg-transparent"
-            placeholder="+ Enter new task"
-            @keyup.enter="createTask($event, column.tasks)"
-          />
-          <!-- add new  task ends -->
-        </div>
+    >
+      <div class="flex items-center mb-2 font-bold">
+        {{ column.name }}
       </div>
-  </div>
+      <div class="list-reset">
+        <column-task
+          v-for="(task, $taskIndex) of column.tasks"
+          :key="$taskIndex"
+          :task="task"
+          :taskIndex="$taskIndex"
+          :column="column"
+          :columnIndex="columnIndex"
+          :board="board"
+        />
+        <!-- add new task starts -->
+        <input
+          type="text"
+          class="block p-2 w-full bg-transparent"
+          placeholder="+ Enter new task"
+          @keyup.enter="createTask($event, column.tasks)"
+        />
+        <!-- add new  task ends -->
+      </div>
+    </div>
 </template>
 
 <script>
 import ColumnTask from './ColumnTask.vue'
+import movingTasksAndColumnsMixin from '@/mixins/movingTasksAndColumnsMixin'
 export default {
+  mixins: [movingTasksAndColumnsMixin],
   components: { ColumnTask },
-  props: {
-    column: {
-      type: Object,
-      required: true
-    },
-    board: {
-      type: Object,
-      required: true
-    },
-    columnIndex: {
-      type: Number,
-      required: true
-    }
-  },
   methods: {
-    moveTaskOrColumn (e, toTasks, toColumnIndex, toTaskIndex) {
-      const type = e.dataTransfer.getData('type')
-      if (type === 'task') {
-        this.moveTask(e, toTasks, toTaskIndex !== undefined ? toTaskIndex : toTasks.length)
-      } else {
-        this.moveColumn(e, toColumnIndex)
-      }
-    },
-
-    moveTask (e, toTasks, toTaskIndex) {
-      const fromColumnIndex = e.dataTransfer.getData('from-column-index')
-      const fromTasks = this.board.columns[fromColumnIndex].tasks
-      const fromTaskIndex = e.dataTransfer.getData('from-task-index')
-      this.$store.commit('MOVE_TASK', {
-        fromTasks,
-        fromTaskIndex,
-        toTasks,
-        toTaskIndex
-      })
-    },
-    moveColumn (e, toColumnIndex) {
-      const fromColumnIndex = e.dataTransfer.getData('from-column-index')
-      this.$store.commit('MOVE_COLUMN', {
-        fromColumnIndex,
-        toColumnIndex
-      })
-    },
-
     pickupColumn (e, fromColumnIndex) {
       e.dataTransfer.effectAllowed = 'move'
       e.dataTransfer.dropEffect = 'move'

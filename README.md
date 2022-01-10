@@ -30,7 +30,6 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
-- [ ] Create a Mixin to encapsulate shared logic
 - [ ] Extract Drag & Drop
 ### DONE
 - [x] Build the board
@@ -41,3 +40,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Extracting columns into components
 - [x] Extracting tasks into components
 - [x] Adding New Columns
+- [x] Create a Mixin to encapsulate shared logic
