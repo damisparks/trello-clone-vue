@@ -5,6 +5,7 @@ export default {
   columns: [
     {
       name: 'todo',
+      id: uuid(),
       tasks: [
         {
           description: '',
@@ -28,6 +29,7 @@ export default {
     },
     {
       name: 'in-progress',
+      id: uuid(),
       tasks: [
         {
           description: '',
@@ -39,6 +41,7 @@ export default {
     },
     {
       name: 'done',
+      id: uuid(),
       tasks: [
         {
           description: '',
