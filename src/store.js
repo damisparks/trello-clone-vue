@@ -35,6 +35,17 @@ export default new Vuex.Store({
     },
 
     /**
+     * this mutation handles creating the new column
+     */
+    CREATE_COLUMN (state, { name }) {
+      state.board.columns.push({
+        name,
+        id: uuid(),
+        tasks: []
+      })
+    },
+
+    /**
      * this mutation handles updating the task
      */
     UPDATE_TASK (state, { task, key, value }) {

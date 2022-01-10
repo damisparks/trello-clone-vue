@@ -48,6 +48,19 @@
           <!-- add new  task ends -->
         </div>
       </div>
+
+      <!-- add new column starts  -->
+      <div class="column flex">
+        <input
+          class="p-2 mr-2 flex-grow"
+          type="text"
+          v-model="newColumnName"
+          placeholder="+ New Column Name"
+          @keyup.enter="createColumn"
+           />
+      </div>
+      <!-- add new column ends -->
+
     </div>
 
     <!-- modal starts -->
@@ -61,6 +74,11 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  data () {
+    return {
+      newColumnName: ''
+    }
+  },
   computed: {
     ...mapState(['board']),
     isTaskOpen () {
@@ -80,6 +98,14 @@ export default {
       )
       e.target.value = ''
     },
+
+    createColumn () {
+      this.$store.commit('CREATE_COLUMN', {
+        name: this.newColumnName
+      })
+      this.newColumnName = ''
+    },
+
     pickupTask (e, taskIndex, fromColumnIndex) {
       e.dataTransfer.effectAllowed = 'move'
       e.dataTransfer.dropEffect = 'move'
@@ -127,7 +153,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="postcss">
 .task {
   @apply flex items-center flex-wrap shadow mb-2 py-2 px-2 rounded bg-white text-grey-darkest no-underline;
 }
