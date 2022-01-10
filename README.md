@@ -30,7 +30,6 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
-- [ ] Extract Drag & Drop
 ### DONE
 - [x] Build the board
 - [x] Add Open Task in a modal
@@ -41,3 +40,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Extracting tasks into components
 - [x] Adding New Columns
 - [x] Create a Mixin to encapsulate shared logic
+- [x] Extract Drag & Drop
