@@ -1,5 +1,6 @@
 # Trello Clone
-The scope of the project to help learn how the drag and drop API works.
+Trello Clone built using [Vue.JS](https://vuejs.org/)
+This repository is my sandbox for exploring new ideas, concepts in Vue.
 
 ## Project setup
 ```
@@ -30,6 +31,12 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
+
+- [ ] Deploy to netlify
+- [ ] Add authentication
+- [ ] Add image upload
+- [ ] Add user(s) to a task
+
 ### DONE
 - [x] Build the board
 - [x] Add Open Task in a modal
