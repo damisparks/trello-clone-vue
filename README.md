@@ -1,21 +1,34 @@
 # Trello Clone Using Vue
-Trello Clone iis built using [Vue.JS](https://vuejs.org/)
+Trello Clone built using [Vue.JS](https://vuejs.org/)
+This repository is my sandbox for exploring new ideas, concepts in Vue.
 
+## Project setup
+```
+npm install
+```
 
-## Folder Structure
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-As of today, the project has been restructured to separate the two different versions of Vue used in the project. They are:
-* [vue2-trello-clone](/vue2-trello-clone/) folder contains the second version of Vue, while the 
-* [vue3-trello-clone](/vue3-trello-clone/) folder contains the Vue three version.
+### Compiles and minifies for production
+```
+npm run build
+```
 
-## Installation
-Check each subfolder for installation instructions
+### Run your tests
+```
+npm run test
+```
 
-## Usage
-The project is free to use.
+### Lints and fixes files
+```
+npm run lint
+```
 
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
 
