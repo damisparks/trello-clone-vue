@@ -16,4 +16,4 @@ To contribute, please follow these steps:
 5. Create a new pull request and describe your changes.
 
 <!-- TODO make or make a code style guideline -->
-<!-- Please make sure to follow the code style guidelines and include tests for any new features. Thank you for contributing! -->
+<!-- Please make sure to follow the code style guidelines and include tests for any new features. Thank you for contributing! .-->
