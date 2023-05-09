@@ -1,37 +1,18 @@
-# Trello Clone Using Vue
-Trello Clone iis built using [Vue.JS](https://vuejs.org/)
+# Vue 3 + TypeScript + Vite
 
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Folder Structure
+## Recommended IDE Setup
 
-As of today, the project has been restructured to separate the two different versions of Vue used in the project. They are:
-* [vue2-trello-clone](/vue2-trello-clone/) folder contains the second version of Vue, while the 
-* [vue3-trello-clone](/vue3-trello-clone/) folder contains the Vue three version.
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Installation
-Check each subfolder for installation instructions
+## Type Support For `.vue` Imports in TS
 
-## Usage
-The project is free to use.
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-### TODO
-
-- [ ] Deploy to netlify
-- [ ] Add authentication
-- [ ] Add image upload
-- [ ] Add user(s) to a task
-
-### DONE
-- [x] Build the board
-- [x] Add Open Task in a modal
-- [x] Add & Edit Task
-- [x] Add drag and dropping of the tasks.
-- [x] Add and dropping columns
-- [x] Extracting columns into components
-- [x] Extracting tasks into components
-- [x] Adding New Columns
-- [x] Create a Mixin to encapsulate shared logic
-- [x] Extract Drag & Drop
+1. Disable the built-in TypeScript Extension
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
